@@ -198,13 +198,24 @@ class MailAndPackagesCard extends LitElement {
         this.numberElements++;
         return html `
         <img class="MailImg clear" src="${camera_url}&interval=30" />
+        <br/>
+        <video width="480" height="320">
+          <source src="${camera_url}&interval=30" type="video/mp4">
+        Your browser does not support the video tag.
+        </video>
     `;
     }
 
     _handleClick() {
-        fireEvent(this, "hass-more-info", {
+        if (this._config.camera){
+            fireEvent(this, "hass-more-info", {
+            entityId: this._config.camera_entity
+        });
+        } else {
+            fireEvent(this, "hass-more-info", {
             entityId: this._config.updated
         });
+        }
     }
 
     getCardSize() {
