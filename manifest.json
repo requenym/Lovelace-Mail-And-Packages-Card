@@ -1,0 +1,8 @@
+{
+  "domain": "mail-and-packages-custom-card",
+  "name": "Mail and Packages Custom Card",
+  "documentation": "https://github.com/moralmunky/Home-Assistant-Mail-And-Packages-Custom-Card",
+  "dependencies": [],
+  "codeowners": [@moralmunky],
+  "requirements": []
+}
